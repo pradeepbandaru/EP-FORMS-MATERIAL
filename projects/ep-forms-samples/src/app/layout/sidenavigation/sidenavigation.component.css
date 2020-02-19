@@ -1,0 +1,10 @@
+.sidebar {
+    border: 1px solid rgba(73, 64, 64, 0.589);
+    padding-top: 0px;
+    max-height: calc(100vh - 122px);
+    overflow: auto;
+}
+
+.mat-list-item {
+    border-bottom: 1px solid #fffffc;
+}

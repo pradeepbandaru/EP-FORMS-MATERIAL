@@ -1,0 +1,43 @@
+<div class="row">
+    <p class='col-sm-12'>Important Information:-</p>
+    <ul>
+        <li>
+            1. Set templateOptions.validator to specify the validation for input field.
+        </li>
+        <li>
+            2. Set templateOptions.validationMsg to specify the validation message for input field.
+        </li>
+        <li>
+            3.
+            <b> Note:</b> We can use custom validation. For this we use 'Custom' in .validator field And also specify regex property for perticuler custom validation.
+        </li>
+    </ul>
+    <p class='col-sm-12'>Options that are available for this validations are given below:</p>
+    <ul>
+        <li>
+            <code>Phone:</code>For phone number validation. ex: 111-111-1111</li>
+        <li>
+            <code>ZIP:</code>For zip code validation. ex: 55555-4444</li>
+        <li>
+            <code>Email:</code>For email address validation. ex: test@domail.com</li>
+        <li>
+            <code>url:</code>For web url validation starts with 'https://'. ex: https://test.com</li>
+        <li>
+            <code>ip-address:</code>For ip address validation. ex: 255.255.255.259</li>
+    </ul>
+</div>
+
+<form [formGroup]="form">
+    <formly-form [model]="model" [fields]="fields" [options]="options" [form]="form"></formly-form>
+</form>
+
+
+
+<div class="row" style='height:300px; overflow-y:auto'>
+    <h3 class="panel-title col-sm-12 ">Model bound to the formly field:</h3>
+    <pre>{{model | json}}</pre>
+</div>
+<div class="row" style='height:300px; overflow-y:auto'>
+    <h3 class="panel-title col-sm-12">Formly Field Defenition</h3>
+    <!-- <pre>{{fields | json}}</pre> -->
+</div>

@@ -1,0 +1,13 @@
+<div class='form-group'>
+    <div class='row'>
+        <label for="{{id}}" [ngClass]="(to.labelCssClass!== undefined && to.labelCssClass !== null)?to.labelCssClass:'col-md-4'" *ngIf="to.label !== undefined && to.label !== null && field.type !== 'ep-checkbox'">
+            <span class="red">{{to.required ? "*" : ""}}</span> {{to.label}}
+        </label>
+        <div [ngClass]="(to.label !== undefined && to.label !== null && field.type !== 'ep-checkbox')?((to.fieldCssClass!== undefined && to.fieldCssClass !== null)?to.fieldCssClass:'col-md-8'):((to.fieldCssClass!== undefined && to.fieldCssClass !== null)?to.fieldCssClass:'col-md-8')">
+            <ng-container #fieldComponent></ng-container>
+            <div class="red" *ngIf="showError">
+                <div *ngIf="formControl.errors.pattern">{{to.validationMsg}}</div>
+            </div>
+        </div>
+    </div>
+</div>

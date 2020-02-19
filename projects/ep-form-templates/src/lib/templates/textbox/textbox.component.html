@@ -1,0 +1,16 @@
+<mat-form-field appearance="outline">
+    <mat-label for="{{id}}" [ngClass]="(to.labelCssClass!== undefined && to.labelCssClass !== null)?to.labelCssClass:''"> <span class="red">{{to.required ? "*" : ""}}</span> {{to.label}}</mat-label>
+    <input matInput pattern='{{to.pattern}}' [(ngModel)]="model[key]" placeholder="{{to.placeholder}}" [attr.maxlength]="to.maxLength" [attr.minlength]="to.minLength" [disabled]="formState.readOnly||to.disabled" title="{{to.title}}" *ngIf="field.type !== 'number'; else numberTmp"
+        [type]="field.type" [formControl]="formControl" class="form-control" [formlyAttributes]="field" [class.is-invalid]="showError" />
+    <ng-template #numberTmp>
+        <input matInput pattern='{{to.pattern}}' [(ngModel)]="model[key]" placeholder="{{to.placeholder}}" [attr.maxlength]="to.maxLength" [attr.minlength]="to.minLength" [disabled]="formState.readOnly||to.disabled" title="{{to.title}}" type="number" [formControl]="formControl"
+            class="form-control" [formlyAttributes]="field" [class.is-invalid]="showError" />
+    </ng-template>
+    <mat-error>
+        {{to.validationMsg}}
+    </mat-error>
+</mat-form-field>
+
+<div class="red" *ngIf="showError">
+    <div *ngIf="formControl.errors.pattern">{{to.validationMsg}}</div>
+</div>
